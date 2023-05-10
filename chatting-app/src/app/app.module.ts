@@ -3,10 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
+import { MessagesBoxComponent } from './messages-box/messages-box.component';
+import { TypingBoxComponent } from './typing-box/typing-box.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    MessagesBoxComponent,
+    TypingBoxComponent
   ],
   imports: [
     BrowserModule,

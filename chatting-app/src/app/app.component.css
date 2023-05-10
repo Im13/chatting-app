@@ -1,0 +1,16 @@
+.box-container, .header-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-container {
+    height: 100vh;
+}
+
+.main-box {
+    height: 500px;
+    display: flex;
+    padding: 0px;
+}
