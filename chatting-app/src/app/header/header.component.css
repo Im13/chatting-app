@@ -1,0 +1,14 @@
+.avatar-section, .control-section, .name-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.control-section {
+    align-items: end;
+}
+
+.rounded-circle {
+    object-fit: cover;
+    object-position: center;
+}
