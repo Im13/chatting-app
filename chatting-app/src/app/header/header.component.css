@@ -1,14 +1,24 @@
 .avatar-section, .control-section, .name-section {
     display: flex;
-    flex-direction: column;
+}
+
+.avatar-section, .name-section {
     justify-content: center;
+    flex-direction: column;
 }
 
 .control-section {
-    align-items: end;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .rounded-circle {
     object-fit: cover;
     object-position: center;
+}
+
+.icon:hover {
+    cursor: pointer;
+    /* color: aqua; */
 }

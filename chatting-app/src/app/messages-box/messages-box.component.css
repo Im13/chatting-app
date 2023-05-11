@@ -1,0 +1,19 @@
+.container {
+    overflow: auto;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.avatar, .message {
+    display: inline-block;
+}
+
+.receive-message, .send-message {
+    margin: 2px 0;
+}
+
+.send-message {
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+}
