@@ -10,7 +10,12 @@
 }
 
 .main-box {
-    height: 500px;
+    height: 600px;
     display: flex;
     padding: 0px;
+}
+
+.container-fluid {
+    background-color: #18191A;
+    color: #CED0D4;
 }
