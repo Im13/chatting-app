@@ -2,6 +2,7 @@ using API.Data;
 using API.Interfaces;
 using API.Services;
 using Microsoft.EntityFrameworkCore;
+using static API.Extensions.Helper;
 
 namespace API.Extensions
 {
