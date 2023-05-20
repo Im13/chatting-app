@@ -1,4 +1,3 @@
-using System.Security.Claims;
 using API.DTOs;
 using API.Entities;
 using API.Extensions;
@@ -39,7 +38,7 @@ namespace API.Controllers
                 return NotFound();
             
             var message = new Message
-            {
+            { 
                 Sender = sender,
                 Recipient = recipient,
                 SenderUsername = sender.Username,
