@@ -3,13 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { MessagesBoxComponent } from './messages-box/messages-box.component';
-import { TypingBoxComponent } from './typing-box/typing-box.component';
+import { HeaderComponent } from './chatbox/header/header.component';
+import { MessagesBoxComponent } from './chatbox/messages-box/messages-box.component';
+import { TypingBoxComponent } from './chatbox/typing-box/typing-box.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ToastrModule } from 'ngx-toastr';
 import { LoginComponent } from './login/login.component';
 import { ChatboxComponent } from './chatbox/chatbox.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ChatboxComponent } from './chatbox/chatbox.component';
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
+    HttpClientModule,
     ToastrModule.forRoot()
   ],
   providers: [],
