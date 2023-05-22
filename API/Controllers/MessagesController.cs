@@ -38,7 +38,7 @@ namespace API.Controllers
                 return NotFound();
             
             var message = new Message
-            { 
+            {
                 Sender = sender,
                 Recipient = recipient,
                 SenderUsername = sender.Username,

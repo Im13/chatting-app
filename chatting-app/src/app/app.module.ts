@@ -7,18 +7,24 @@ import { HeaderComponent } from './header/header.component';
 import { MessagesBoxComponent } from './messages-box/messages-box.component';
 import { TypingBoxComponent } from './typing-box/typing-box.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ToastrModule } from 'ngx-toastr';
+import { LoginComponent } from './login/login.component';
+import { ChatboxComponent } from './chatbox/chatbox.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     MessagesBoxComponent,
-    TypingBoxComponent
+    TypingBoxComponent,
+    LoginComponent,
+    ChatboxComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
