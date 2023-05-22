@@ -1,0 +1,43 @@
+.container-fluid {
+    background-color: #222831;
+}
+
+.login-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-box {
+    background-color: #EEEEEE;
+    color: #18191A;
+}
+
+.forgot-password {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn-create-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-success {
+    background-color: #48b636;
+    border: none;
+}
+
+.btn {
+    height: 2.6rem;
+}
+
+.btn-success:hover {
+    background-color: #3ca32c;
+}
