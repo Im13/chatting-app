@@ -6,9 +6,11 @@ import { AuthGuard } from './_guards/auth.guard';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
-  { path: 'message',
-    component: ChatboxComponent,
-    canActivate: [AuthGuard]
+  { path: '',
+    canActivate: [AuthGuard],
+    children: [
+      { path: 'message', component: ChatboxComponent},
+    ]
   }
 ]; 
 
