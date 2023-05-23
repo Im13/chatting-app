@@ -1,57 +1,32 @@
 <div class="container p-2 h-100">
     <div class="row m-0">
-        <div class="col-8 receive-message p-0 mt-1">
-            <div class="avatar p-1">
-                <img src="../../assets/example_img/khi-mao_ktqa.jpeg" class="rounded-circle" width="20rem"
-                    height="20rem" style="object-fit: cover; object-position: center;">
-            </div>
-
-            <div class="rounded-end-3 ms-2">
-                <span class="message message-received p-1 rounded-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam,</span>
-            </div>
+        <div *ngIf="messages.length === 0">
+            No message.
         </div>
 
-        <div class="col-8 receive-message p-0 mt-1">
-            <div class="avatar p-1">
-                <img src="../../assets/example_img/khi-mao_ktqa.jpeg" class="rounded-circle" width="20rem"
-                    height="20rem" style="object-fit: cover; object-position: center;">
-            </div>
+        <div *ngIf="messages.length > 0">
+            <li *ngFor="let message of messages">
+                <div *ngIf="message.recipientUsername == user.username" class="col-8 receive-message p-0 mt-1">
+                    <div class="avatar p-1">
+                        <img src="{{photoUrl}}" class="rounded-circle" width="20rem"
+                            height="20rem" style="object-fit: cover; object-position: center;">
+                    </div>
+        
+                    <div class="rounded-end-3 ms-2">
+                        <span class="message message-received p-1 rounded-3">
+                            {{message.content}}
+                        </span>
+                    </div>
+                </div>
 
-            <div class="rounded-end-3 ms-2">
-                <span class="message message-received p-1 rounded-3">sdf</span>
-            </div>
-        </div>
-
-        <div class="col-md-12 send-message p-0 mt-1">
-            <div class="col-8">
-                <span class="message message-sent p-1 rounded-3">
-                    Lorem ipsum dolor sit amet
-                </span>
-            </div>
-        </div>
-
-        <div class="col-md-12 send-message p-0 mt-1">
-            <div class="col-8">
-                <span class="message message-sent p-1 rounded-3">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                </span>
-            </div>
-        </div>
-
-        <div class="col-md-12 send-message p-0 mt-1">
-            <div class="col-8">
-                <span class="message message-sent p-1 rounded-3">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam,
-                </span>
-            </div>
-        </div>
-
-        <div class="col-md-12 send-message p-0 mt-1">
-            <div class="col-8">
-                <span class="message message-sent p-1 rounded-3">1123123</span>
-            </div>
+                <div *ngIf="message.recipientUsername != user.username" class="col-md-12 send-message p-0 mt-1">
+                    <div class="col-8">
+                        <span class="message message-sent p-1 rounded-3">
+                            {{message.content}}
+                        </span>
+                    </div>
+                </div>
+            </li>
         </div>
     </div>
 </div>

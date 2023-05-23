@@ -35,3 +35,7 @@
 .receive-message {
     display: flex;
 }
+
+li {
+    list-style-type: none;
+}
