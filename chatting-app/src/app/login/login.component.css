@@ -41,3 +41,11 @@ a {
 .btn-success:hover {
     background-color: #3ca32c;
 }
+
+.input-alert {
+    color: red;
+}
+
+input.ng-invalid.ng-touched {
+    border: 1px red solid;
+}

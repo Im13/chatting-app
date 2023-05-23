@@ -12,6 +12,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { LoginComponent } from './login/login.component';
 import { ChatboxComponent } from './chatbox/chatbox.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     ToastrModule.forRoot({
       timeOut: 1500,
       positionClass: 'toast-bottom-right',
