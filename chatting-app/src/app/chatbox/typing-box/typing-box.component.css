@@ -1,7 +1,7 @@
-
 .typing-zone {
     display: flex;
     align-items: center;
+    overflow: hidden;
 }
 
 form {
@@ -12,7 +12,20 @@ form {
     text-align: right;
 }
 
-.btn-send:hover {
+.btn-send {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.ng-fa-icon:hover {
     cursor: pointer;
-    background-color: beige;
+    color: #008dfa;
+}
+
+input {
+    background-color: #3a3b3c;
+    color: #e3e5ea;
+    font-weight: 100;
+    border: none;
 }

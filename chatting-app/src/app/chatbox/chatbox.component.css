@@ -13,9 +13,18 @@
     height: 600px;
     display: flex;
     padding: 0px;
+    overflow: hidden;
 }
 
 .container-fluid {
-    background-color: #222831;
+    background-color: #18191a;
     color: #EEEEEE;
+}
+
+.app-header, .app-typing-box, .app-message-box {
+    background-color: #242526;
+}
+
+.app-header {
+    border: 1px #2f3031 solid;
 }
