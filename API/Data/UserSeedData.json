@@ -1,6 +1,6 @@
 [
   {
-    "Username": "Carver",
+    "UserName": "Carver",
     "Gender": "male",
     "DateOfBirth": "1972-08-11",
     "Created": "2020-06-14",
@@ -16,7 +16,7 @@
     ]
   },
   {
-    "Username": "Juarez",
+    "UserName": "Juarez",
     "Gender": "male",
     "DateOfBirth": "1960-01-26",
     "Created": "2019-06-27",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "Username": "Ines",
+    "UserName": "Ines",
     "Gender": "female",
     "DateOfBirth": "1968-12-26",
     "Created": "2019-12-07",
@@ -48,7 +48,7 @@
     ]
   },
   {
-    "Username": "Randall",
+    "UserName": "Randall",
     "Gender": "male",
     "DateOfBirth": "1999-08-20",
     "Created": "2019-08-21",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "Username": "Small",
+    "UserName": "Small",
     "Gender": "male",
     "DateOfBirth": "1961-02-06",
     "Created": "2019-08-23",
