@@ -1,0 +1,41 @@
+.container {
+    overflow: auto;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.avatar, .message {
+    display: inline-block;
+}
+
+.receive-message, .send-message {
+    margin: 2px 0;
+}
+
+.send-message {
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+    overflow: hidden;
+}
+
+.message {
+    border: none;
+    text-align: left;
+}
+
+.message-sent {
+    background-color: #008dfa;
+}
+
+.message-received {
+    background-color: #3a3b3c;
+}
+
+.receive-message {
+    display: flex;
+}
+
+li {
+    list-style-type: none;
+}
