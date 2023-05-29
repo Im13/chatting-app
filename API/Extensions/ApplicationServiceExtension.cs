@@ -20,6 +20,7 @@ namespace API.Extensions
             services.AddScoped<IUserRepository,UserRepository>();
             services.AddScoped<IMessageRepository,MessageRepository>();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            services.AddSignalR();
 
             return services;
         }

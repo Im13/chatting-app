@@ -1,6 +1,7 @@
 using API.Data;
 using API.Entities;
 using API.Extensions;
+using API.SignalR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using static API.Helpers.Helper;
@@ -27,7 +28,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseCors(builder => builder.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200"));
+app.UseCors(builder => builder
+    .AllowAnyHeader()
+    .AllowAnyMethod()
+    .AllowCredentials()
+    .WithOrigins("http://localhost:4200"));
 
 app.UseHttpsRedirection(); 
 
@@ -36,6 +41,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapHub<PresenceHub>("hubs/presence");
 
 using var scope = app.Services.CreateScope();
 var services = scope.ServiceProvider;
