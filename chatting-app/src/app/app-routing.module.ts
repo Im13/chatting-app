@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { ChatboxComponent } from './chatbox/chatbox.component';
 import { AuthGuard } from './_guards/auth.guard';
+import { AdminComponent } from './admin/admin.component';
+import { AdminGuard } from './_guards/admin.guard';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -10,6 +12,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       { path: 'message', component: ChatboxComponent},
+      { path: 'admin', component: AdminComponent, canActivate: [AdminGuard]}
     ]
   }
 ]; 

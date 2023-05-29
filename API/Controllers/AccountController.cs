@@ -1,6 +1,3 @@
-using System.Security.Cryptography;
-using System.Text;
-using API.Data;
 using API.DTOs;
 using API.Entities;
 using API.Interfaces;
@@ -39,9 +36,13 @@ namespace API.Controllers
 
             if(!result.Succeeded) return BadRequest(result.Errors);
 
+            var roleResult = await _userManager.AddToRoleAsync(user, "Member");
+
+            if(!roleResult.Succeeded) return BadRequest(roleResult.Errors);
+
             return new UserDTO {
                 Username = user.UserName,
-                Token = _tokenService.CreateToken(user),
+                Token = await _tokenService.CreateToken(user),
                 KnowAs = user.KnownAs,
                 Gender = user.Gender
             };
@@ -62,8 +63,8 @@ namespace API.Controllers
 
             return new UserDTO {
                 Username = user.UserName,
-                Token = _tokenService.CreateToken(user),
-                PhotoUrl = user.Photos.FirstOrDefault(p => p.IsMain == true).Url,
+                Token = await _tokenService.CreateToken(user),
+                PhotoUrl = user.Photos.FirstOrDefault(p => p.IsMain == true)?.Url,
                 Gender = user.Gender,
                 KnowAs = user.KnownAs
             };

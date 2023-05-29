@@ -14,6 +14,7 @@ import { ChatboxComponent } from './chatbox/chatbox.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { JwtInterceptor } from './_interceptors/jwt.interceptor';
     MessagesBoxComponent,
     TypingBoxComponent,
     LoginComponent,
-    ChatboxComponent
+    ChatboxComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
