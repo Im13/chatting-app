@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Member } from '../_models/member';
 import { MemberService } from '../_services/member.service';
+import { PresenceService } from '../_services/presence.service';
 
 @Component({
   selector: 'app-contacts',
@@ -10,7 +11,7 @@ import { MemberService } from '../_services/member.service';
 export class ContactsComponent implements OnInit {
   members: Member[] = [];
 
-  constructor(private memberService: MemberService) { }
+  constructor(private memberService: MemberService, public  presenceService: PresenceService) { }
 
   ngOnInit(): void {
     this.loadMembers();

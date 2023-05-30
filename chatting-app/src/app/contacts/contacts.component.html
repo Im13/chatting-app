@@ -18,10 +18,14 @@
               </div>
             </div>
 
-            <div class="contact-name"> {{ member.username }}</div>
+            <div class="contact-name"> {{ member.knownAs }}</div>
 
             <div class="contact-live ms-2">
-              <span class="dot-online"></span>
+              <span class="dot-online" 
+                *ngIf="(presenceService.onlineUsers$ | async)?.includes(member.username); else dotOffline"></span>
+              <ng-template #dotOffline>
+                <span class="dot-offline"></span>
+              </ng-template>
             </div>
           </div>
         </div>
