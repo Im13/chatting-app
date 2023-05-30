@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Member } from '../_models/member';
+import { MemberService } from '../_services/member.service';
 
 @Component({
   selector: 'app-contacts',
@@ -6,11 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contacts.component.css']
 })
 export class ContactsComponent implements OnInit {
-  photoUrl = 'https://randomuser.me/api/portraits/women/19.jpg';
+  members: Member[] = [];
 
-  constructor() { }
+  constructor(private memberService: MemberService) { }
 
   ngOnInit(): void {
+    this.loadMembers();
   }
 
+  loadMembers() {
+    this.memberService.getMembers().subscribe({
+      next: members => {
+        this.members = members
+      }
+    });
+  }
 }

@@ -49,9 +49,10 @@ namespace API.Data
                 .SingleOrDefaultAsync();
         }
 
-        public async Task<IEnumerable<MemberDTO>> GetMembersAsync()
+        public async Task<IEnumerable<MemberDTO>> GetMembersAsync(string username)
         {
             return await _context.Users
+                .Where(u => u.UserName.ToLower() != username.ToLower())
                 .ProjectTo<MemberDTO>(_mapper.ConfigurationProvider)
                 .ToListAsync();
         }

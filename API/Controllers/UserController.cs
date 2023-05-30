@@ -1,5 +1,6 @@
 using API.DTOs;
 using API.Entities;
+using API.Extensions;
 using API.Interfaces;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
@@ -22,7 +23,9 @@ namespace API.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<MemberDTO>>> GetUsers() 
         {
-            var usersToReturn = await _userRepository.GetMembersAsync();
+            var username = User.GetUsername();
+
+            var usersToReturn = await _userRepository.GetMembersAsync(username);
 
             return Ok(usersToReturn);
         }
