@@ -1,0 +1,68 @@
+.container-fluid {
+  background-color: #18191a;
+  color: #eeeeee;
+}
+
+.box-container,
+.contact-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.box-container {
+  height: 100vh;
+  align-items: center;
+}
+
+.main-box {
+  background-color: #242526;
+  height: 80%;
+  display: flex;
+  padding: 0px;
+  overflow: hidden;
+}
+
+.contact-header {
+  border-bottom: 1px #2f3031 solid;
+}
+
+.contact, .contact-body {
+  display: flex;
+  justify-content: start;
+}
+
+.contact-body {
+  flex-direction: column;
+  overflow: auto;
+}
+
+.contact {
+  flex-direction: row;
+  align-items: center;
+}
+
+.dot-online, .dot-offline {
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-online {
+  background-color: #31A24C;
+}
+
+.dot-offline {
+  background-color: #bbb;
+}
+
+.contact:hover {
+  background-color: #303031;
+  cursor: pointer;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 0px;
+}

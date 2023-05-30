@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
     if(formValue.username.trim() == '') {
       this.toastr.error("Please input username!");
       return;
-    } 
+    }
 
     if(formValue.password.trim() == '') {
       this.toastr.error("Please input password");
@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
 
     this.accountService.login(this.model).subscribe({
       next: () => {
-        this.router.navigateByUrl('message');
+        this.router.navigateByUrl('contacts');
       }
     })
   }

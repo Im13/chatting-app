@@ -15,6 +15,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
 import { AdminComponent } from './admin/admin.component';
+import { ContactsComponent } from './contacts/contacts.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AdminComponent } from './admin/admin.component';
     TypingBoxComponent,
     LoginComponent,
     ChatboxComponent,
-    AdminComponent
+    AdminComponent,
+    ContactsComponent
   ],
   imports: [
     BrowserModule,

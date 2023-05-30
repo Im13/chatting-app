@@ -5,6 +5,7 @@ import { ChatboxComponent } from './chatbox/chatbox.component';
 import { AuthGuard } from './_guards/auth.guard';
 import { AdminComponent } from './admin/admin.component';
 import { AdminGuard } from './_guards/admin.guard';
+import { ContactsComponent } from './contacts/contacts.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -12,10 +13,11 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       { path: 'message', component: ChatboxComponent},
+      { path: 'contacts', component: ContactsComponent},
       { path: 'admin', component: AdminComponent, canActivate: [AdminGuard]}
     ]
   }
-]; 
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
