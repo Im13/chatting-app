@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Message } from 'src/app/_models/message';
 import { User } from 'src/app/_models/user';
 import { MessageService } from 'src/app/_services/message.service';
@@ -8,27 +8,23 @@ import { MessageService } from 'src/app/_services/message.service';
   templateUrl: './messages-box.component.html',
   styleUrls: ['./messages-box.component.css']
 })
-export class MessagesBoxComponent implements OnInit {
-  //Username and photoUrl of target member to send 
+export class MessagesBoxComponent implements OnInit, OnDestroy {
   @Input() username: string;
   @Input() photoUrl: string;
 
   user : User = JSON.parse(localStorage.getItem('user'));
   messages: Message[] = [];
 
-  constructor(private messageService: MessageService) { }
+  constructor(public messageService: MessageService) { }
 
-  ngOnInit(): void {
-    this.loadMessages();
+  ngOnDestroy(): void {
+    this.messageService.stopHubConnection();
   }
 
-  loadMessages() {
-    if(this.username) {
-      this.messageService.getMessageThread(this.username).subscribe({
-        next: messages => {
-          this.messages = messages;
-        }
-      });
-    }
+  ngOnInit(): void {
+    if(this.user)
+      this.messageService.createHubConnection(this.user, this.username);
+    else
+      this.messageService.stopHubConnection();
   }
 }

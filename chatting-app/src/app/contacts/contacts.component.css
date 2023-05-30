@@ -29,7 +29,7 @@
 
 .contact, .contact-body {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .contact-body {

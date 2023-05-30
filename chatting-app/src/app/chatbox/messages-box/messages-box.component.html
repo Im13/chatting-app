@@ -1,11 +1,11 @@
 <div class="container p-2 h-100">
     <div class="row m-0">
-        <div *ngIf="messages.length === 0">
+        <div *ngIf="(messageService.messageThread$ | async)?.length === 0">
             No message.
         </div>
 
-        <div *ngIf="messages.length > 0">
-            <li *ngFor="let message of messages">
+        <div *ngIf="(messageService.messageThread$ | async)?.length > 0">
+            <li *ngFor="let message of (messageService.messageThread$ | async)">
                 <div *ngIf="message.recipientUsername == user.username" class="col-8 receive-message p-0 mt-1">
                     <div class="avatar p-1">
                         <img src="{{photoUrl}}" class="rounded-circle" width="20rem"

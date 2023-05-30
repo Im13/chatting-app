@@ -21,11 +21,8 @@ export class TypingBoxComponent implements OnInit {
     var content : string = frm.value.content;
 
     if(content.trim() != '') {
-      this.messageService.sendMessage(this.username, content).subscribe({
-        next: message => {
-          console.log(message);
-          frm.reset();
-        }
+      this.messageService.sendMessage(this.username, content).then(() => {
+        frm.reset();
       });
     }
   }

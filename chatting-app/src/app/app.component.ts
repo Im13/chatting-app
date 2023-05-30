@@ -22,6 +22,7 @@ export class AppComponent {
     if(user)
     {
       this.accountService.setCurrentUser(user);
+      console.log('s');
     }
   }
 }
