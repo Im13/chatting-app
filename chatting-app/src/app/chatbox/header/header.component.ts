@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { faMinus } from '@fortawesome/free-solid-svg-icons';
+import { Member } from 'src/app/_models/member';
+import { PresenceService } from 'src/app/_services/presence.service';
 
 @Component({
   selector: 'app-header',
@@ -10,8 +12,9 @@ import { faMinus } from '@fortawesome/free-solid-svg-icons';
 export class HeaderComponent implements OnInit {
   xMark = faXmark;
   minus = faMinus;
+  @Input() member: Member;
 
-  constructor() { }
+  constructor(public presenceService: PresenceService) { }
 
   ngOnInit(): void {
   }

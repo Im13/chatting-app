@@ -2,11 +2,20 @@
     <div class="col-8 p-2">
         <div class="row h-100 w-100 m-0">
             <div class="col-3 m-0 p-0 avatar-section">
-                <img src="../../assets/example_img/khi-mao_ktqa.jpeg" class="rounded-circle" width="40rem" height="40rem">
+                <img src="{{ member.photoUrl }}" class="rounded-circle" width="40rem"
+                    height="40rem">
             </div>
 
             <div class="col-9 p-0 name-section">
-                Ines
+                <div class="username">{{ member.knownAs }}</div>
+
+                <div class="online-status ms-2">
+                    <span class="dot-online"
+                        *ngIf="(presenceService.onlineUsers$ | async)?.includes(member.username); else dotOffline"></span>
+                    <ng-template #dotOffline>
+                        <span class="dot-offline"></span>
+                    </ng-template>
+                </div>
             </div>
         </div>
     </div>
@@ -16,7 +25,7 @@
             <fa-icon [icon]="minus" size="lg"></fa-icon>
         </div>
 
-        <div class="icon">
+        <div class="icon" routerLink="/contacts">
             <fa-icon [icon]="xMark" size="lg"></fa-icon>
         </div>
     </div>

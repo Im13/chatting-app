@@ -5,28 +5,30 @@
         <div class="contact-header h-10">Contacts</div>
 
         <div class="contact-body w-100 h-90 p-0">
-          <div *ngFor="let member of members" class="contact w-100 h-10 rounded p-2">
-            <div class="contact-image w-15 me-1">
-              <div class="avatar p-1">
-                <img
-                  src="{{ member.photoUrl }}"
-                  class="rounded-circle"
-                  width="40rem"
-                  height="40rem"
-                  style="object-fit: cover; object-position: center"
-                />
+          <div *ngFor="let member of members" 
+            class="contact w-100 h-10 rounded p-2" 
+            routerLink="/message/{{member.username}}">
+              <div class="contact-image w-15 me-1">
+                <div class="avatar p-1">
+                  <img
+                    src="{{ member.photoUrl }}"
+                    class="rounded-circle"
+                    width="40rem"
+                    height="40rem"
+                    style="object-fit: cover; object-position: center"
+                  />
+                </div>
               </div>
-            </div>
 
-            <div class="contact-name"> {{ member.knownAs }}</div>
+              <div class="contact-name"> {{ member.knownAs }}</div>
 
-            <div class="contact-live ms-2">
-              <span class="dot-online" 
-                *ngIf="(presenceService.onlineUsers$ | async)?.includes(member.username); else dotOffline"></span>
-              <ng-template #dotOffline>
-                <span class="dot-offline"></span>
-              </ng-template>
-            </div>
+              <div class="contact-live ms-2">
+                <span class="dot-online" 
+                  *ngIf="(presenceService.onlineUsers$ | async)?.includes(member.username); else dotOffline"></span>
+                <ng-template #dotOffline>
+                  <span class="dot-offline"></span>
+                </ng-template>
+              </div>
           </div>
         </div>
       </div>

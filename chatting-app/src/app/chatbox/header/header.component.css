@@ -1,10 +1,17 @@
-.avatar-section, .control-section, .name-section {
+.avatar-section,
+.control-section,
+.name-section {
     display: flex;
 }
 
-.avatar-section, .name-section {
+.avatar-section {
     justify-content: center;
     flex-direction: column;
+}
+
+.name-section {
+    flex-direction: row;
+    align-items: center;
 }
 
 .control-section {
@@ -20,4 +27,20 @@
 
 .icon:hover {
     cursor: pointer;
+}
+
+.dot-online,
+.dot-offline {
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot-online {
+    background-color: #31a24c;
+}
+
+.dot-offline {
+    background-color: #bbb;
 }

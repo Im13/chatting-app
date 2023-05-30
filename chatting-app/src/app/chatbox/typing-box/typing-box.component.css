@@ -26,6 +26,7 @@ form {
 input {
     background-color: #3a3b3c;
     color: #e3e5ea;
-    font-weight: 100;
+    font-weight: 300;
+    font-size: .9rem;
     border: none;
 }
